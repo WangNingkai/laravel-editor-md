@@ -1,0 +1,22 @@
+{
+    "name": "wangningkai/laravel-editor-md",
+    "description": "editor.md for laravel",
+    "keywords": ["laravel", "editor.md", "markdown", "wangningkai"],
+    "license": "MIT",
+    "authors": [{
+        "name": "WangNingkai",
+        "email": "ningkai.wang@live.com"
+    }],
+    "require": {
+        "php": ">=5.5.9"
+    },
+    "autoload": {
+        "psr-4": {
+            "WangNingkai\\Editor\\": "src/"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    },
+    "minimum-stability": "dev"
+}
