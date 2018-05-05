@@ -83,7 +83,7 @@ $(function() {
     };
     _'.$editor_id.' = editormd({
             id : "'.$editor_id.'",
-            width : '.config('editor.width').',
+            width : "'.config('editor.width').'",
             height : '.config('editor.height').',
             saveHTMLToTextarea : '.config('editor.saveHTMLToTextarea').',
             emoji : '.config('editor.emoji').',
