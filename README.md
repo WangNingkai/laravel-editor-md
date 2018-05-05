@@ -13,13 +13,16 @@
 
 ## 安装与配置
 
-在 `composer.json` 新增 `"wangningkai/laravel-editor-md": "dev-master"` 依赖，然后执行： `composer update` 操作。
+```
+composer require wangningkai/laravel-editor-md
+
+```
 
 依赖安装完毕之后，在 `app.php` 中添加：
 
 ```php
 'providers' => [
-        'WangNingkai\Editor\EditorServiceProvider',
+        WangNingkai\Editor\EditorServiceProvider::class,
 ],
 ```
 
@@ -31,7 +34,7 @@ php artisan vendor:publish --force
 
 现在您可以访问 `/laravel-editor-md/example` 路由，不出意外，您可以看到扩展包提供的示例页面。
 
-
+![](https://onedrive.imwnk.cn/%E5%9B%BE%E7%89%87%E7%BC%93%E5%AD%98/laravel-editor-md.jpg)
 
 编辑器图片默认会上传到 `public/uploads/content` 目录下；编辑器相关功能配置位于 `config/editor.php` 文件中。
 
