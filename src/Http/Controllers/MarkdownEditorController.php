@@ -50,9 +50,8 @@ class MarkdownEditorController extends Controller
                     if ($file->isValid()) {
                         $uploadSuccess = $file->move($savePath, $oFile);  //移动文件
                         if(config('editor.addTextWater')){
-                            add_text_water(public_path().$fullfilename,config('editor.textWaterColor'),config('editor.textWaterColor'));
+                            add_text_water(public_path($fullfilename),config('editor.textWaterContent'),config('editor.textWaterColor'));
                         }
-                        $fullfilename;
                         $oFilePath = $savePath.'/'.$oFile;
                         $json = array_replace($json, ['success' => 1, 'url' => $fullfilename]);
                     } else {
