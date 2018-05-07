@@ -50,13 +50,13 @@ if ( !function_exists('add_image_water') ) {
      * 给图片添加图片水印
      *
      * @param $file
-     * @param $img
+     * @param $waterImage
      * @param string $color
      * @return mixed
      */
-    function add_image_water($file, $img) {
+    function add_image_water($file, $waterImage) {
         $image = Image::make($file);
-        $img->insert($img, 'bottom-right');;
+        $image->insert($waterImage, 'bottom-right',10,15);
         $image->save($file);
         return $image;
     }
@@ -64,7 +64,7 @@ if ( !function_exists('add_image_water') ) {
 
 /**
  * editor.md css 相关依赖
- * 
+ *
  * @return string
  */
 function editor_css()
@@ -84,7 +84,7 @@ function editor_css()
 /**
  * editor.md js 相关依赖
  * 实际上，editor.md 某些功能组件（如`flowChart`）置 false，可减少对应的js依赖，但为了安全起见还是将所有可能的js依赖列出。
- * 
+ *
  * @return string
  */
 function editor_js()
@@ -107,7 +107,7 @@ function editor_js()
 
 /**
  * editor.md 初始化配置js代码
- * 
+ *
  * @param  string $editor_id 编辑器 `textarea` 所在父div层id值，默认取 `mdeditor` 字符串
  * @return string
  */

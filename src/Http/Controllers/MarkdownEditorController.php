@@ -11,7 +11,7 @@ class MarkdownEditorController extends Controller
 
     /**
      * 针对editor.md所写的图片上传控制器
-     * 
+     *
      * @param  Request $requst
      * @return Response
      */
@@ -49,7 +49,7 @@ class MarkdownEditorController extends Controller
                     $fullfilename = '/'.$savePath.'/'.$oFile;  //原始完整路径
                     if ($file->isValid()) {
                         $uploadSuccess = $file->move($savePath, $oFile);  //移动文件
-                        switch (config('waterMarkType')) {
+                        switch (config('editor.waterMarkType')) {
                             case 'text':
                                 add_text_water(public_path($fullfilename),config('editor.textWaterContent'),config('editor.textWaterColor'));
                                 break;
