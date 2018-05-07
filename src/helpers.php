@@ -1,5 +1,7 @@
 <?php
 
+use  Intervention\Image\Facades\Image;
+
 if (!function_exists('format_json_message')) {
     /**
      * 格式化表单校验消息，并进行json数组化预处理
@@ -17,6 +19,30 @@ if (!function_exists('format_json_message')) {
         $info = '失败原因为：'.$reasons;
         $json = array_replace($json, ['info' => $info]);
         return $json;
+    }
+}
+
+if ( !function_exists('add_text_water') ) {
+    /**
+     * 给图片添加文字水印
+     *
+     * @param $file
+     * @param $text
+     * @param string $color
+     * @return mixed
+     */
+    function add_text_water($file, $text, $color = '#0B94C1') {
+        $image = Image::make($file);
+        return tap($image,function($image){
+            $image->text($text, $image->width()-20, $image->height()-30, function($font) use($color) {
+                $font->file(public_path('/vendor/editor.md/fonts/yahei.ttf'));
+                $font->size(15);
+                $font->color($color);
+                $font->align('right');
+                $font->valign('bottom');
+            });
+            $image->save($file);
+        });
     }
 }
 
