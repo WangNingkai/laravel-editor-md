@@ -45,6 +45,23 @@ if ( !function_exists('add_text_water') ) {
     }
 }
 
+if ( !function_exists('add_image_water') ) {
+    /**
+     * 给图片添加图片水印
+     *
+     * @param $file
+     * @param $img
+     * @param string $color
+     * @return mixed
+     */
+    function add_image_water($file, $img) {
+        $image = Image::make($file);
+        $img->insert($img, 'bottom-right');;
+        $image->save($file);
+        return $image;
+    }
+}
+
 /**
  * editor.md css 相关依赖
  * 
