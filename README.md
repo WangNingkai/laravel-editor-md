@@ -1,4 +1,10 @@
-# editor.md for Laravel
+editor.md for Laravel
+====================
+
+[![Latest Stable Version](https://poser.pugx.org/wangningkai/laravel-editor-md/v/stable)](https://packagist.org/packages/wangningkai/laravel-editor-md)
+[![Total Downloads](https://poser.pugx.org/wangningkai/laravel-editor-md/downloads)](https://packagist.org/packages/wangningkai/laravel-editor-md)
+[![Latest Unstable Version](https://poser.pugx.org/wangningkai/laravel-editor-md/v/unstable)](https://packagist.org/packages/wangningkai/laravel-editor-md)
+[![License](https://poser.pugx.org/wangningkai/laravel-editor-md/license)](https://packagist.org/packages/wangningkai/laravel-editor-md)
 
 >  `editor.md` 是一款高度可定制化的 `markdown` 编辑器，官方网站：https://pandao.github.io/editor.md/ 。
 
